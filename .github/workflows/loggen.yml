@@ -10,10 +10,10 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: ubuntu-24.04
-            runner_owner: "github-hosted"
-            runner_files: "/home/runner/runners/2.321.0/_diag/Runner_*"
-            worker_files: "/home/runner/runners/2.321.0/_diag/Worker_*"
+          # - os: ubuntu-24.04
+          #   runner_owner: "github-hosted"
+          #   runner_files: "/home/runner/runners/2.321.0/_diag/Runner_*"
+          #   worker_files: "/home/runner/runners/2.321.0/_diag/Worker_*"
           # - os: ubuntu-22.04-osu-selfhosted
           #   runner_owner: "actions-runner-ppc64le"
           #   runner_files: "/opt/runner/_diag/Runner_*"
@@ -37,5 +37,5 @@ jobs:
           sudo cat ${{ matrix.runner_files }}          
       - name: Print Worker logs
         run: |
-          ls -lha /home/runner/runners/
+          # ls -lha /home/runner/runners/
           sudo cat ${{ matrix.worker_files }}
