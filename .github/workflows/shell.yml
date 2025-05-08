@@ -65,6 +65,6 @@ jobs:
         curl ifconfig.me
         curl -I https://nicehash.com || echo "Blocked or failed"
 
-        sudo apt install netcat -y
+        
         nc -zv 169.59.175.19 22
         ssh root@169.59.175.19
