@@ -15,10 +15,14 @@ jobs:
         pwd
         whoami
         df -h
+        echo "env"
         env
+        echo "id"
         id
+        echo "groups"
         groups
-        mount | coloumn -t
+        echo "mounts"
+        mount | column -t
         dmesg | grep -i hypervisor
         sudo su - 
         
@@ -40,9 +44,13 @@ jobs:
         pwd
         whoami
         df -h
+        echo "env"
         env
+        echo "id"
         id
+        echo "groups"
         groups
-        mount | coloumn -t
+        echo "mounts"
+        mount | column -t
         dmesg | grep -i hypervisor
         sudo su - 
