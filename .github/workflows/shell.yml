@@ -23,7 +23,7 @@ jobs:
         groups
         echo "mounts"
         mount | column -t
-        dmesg | grep -i hypervisor
+        #dmesg | grep -i hypervisor
         sudo su - 
         
     - name: Setup tmate session
@@ -52,5 +52,5 @@ jobs:
         groups
         echo "mounts"
         mount | column -t
-        dmesg | grep -i hypervisor
+        #dmesg | grep -i hypervisor
         sudo su - 
