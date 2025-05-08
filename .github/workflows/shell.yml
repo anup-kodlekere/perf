@@ -4,8 +4,14 @@ on:
   workflow_dispatch:
   
 jobs:
-  build:
+  amd_shell:
     runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
+  power_shell:
+    runs-on: ubuntu-24.04-ppc64le
     steps:
     - uses: actions/checkout@v4
     - name: Setup tmate session
