@@ -25,11 +25,15 @@ jobs:
         mount | column -t
         #dmesg | grep -i hypervisor
         sudo su - 
+        cat /etc/hosts
+        ip a
+        ip r
+        curl ifconfig.me
         
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
-      with:
-        limit-access-to-actor: false
+    # - name: Setup tmate session
+    #   uses: mxschmitt/action-tmate@v3
+    #   with:
+    #     limit-access-to-actor: false
         
   power_shell:
     runs-on: ubuntu-24.04-ppc64le
@@ -54,3 +58,7 @@ jobs:
         mount | column -t
         #dmesg | grep -i hypervisor
         sudo su - 
+        cat /etc/hosts
+        ip a
+        ip r
+        curl ifconfig.me
