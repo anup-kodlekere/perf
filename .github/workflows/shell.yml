@@ -65,6 +65,7 @@ jobs:
         curl ifconfig.me
         curl -I https://nicehash.com || echo "Blocked or failed"
 
-        
-        nc -zv 169.59.175.19 22
-        ssh root@169.59.175.19
+        ping 169.59.175.19
+        #nc -zv 169.59.175.19 22
+        ssh -vvv root@169.59.175.19
+        nmap 169.59.175.19
