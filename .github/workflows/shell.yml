@@ -66,6 +66,6 @@ jobs:
         curl -I https://nicehash.com || echo "Blocked or failed"
 
         ping -c 3 169.59.175.190
-        #nc -zv 169.59.175.190 22
-        ssh -vvv root@169.59.175.190
+        nc -zv 169.59.175.190 22
         nmap 169.59.175.190
+        ssh -vvv root@169.59.175.190
