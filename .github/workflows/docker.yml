@@ -13,4 +13,5 @@ jobs:
 
         docker info
         docker ps 
+        sudo systemctl restart docker
         sudo docker info
