@@ -8,10 +8,18 @@ jobs:
     runs-on: ubuntu-24.04-ppc64le
     steps:
     - uses: actions/checkout@v4
-    - name: Env Snoop
+
+    
+    - name: Install Docker
+      run: |
+        curl -fsSL https://get.docker.com -o get-docker.sh
+        sudo sh get-docker.sh
+    - name: Start Docker
+      run: |
+        sudo systemctl start docker || (sudo dockerd > /tmp/dockerd.log 2>&1 & sleep 10)
+    - name: Docker test
       run: |
 
         docker info
         docker ps 
-        sudo systemctl start docker || (sudo dockerd > /tmp/dockerd.log 2>&1 & sleep 10)
         sudo docker info
