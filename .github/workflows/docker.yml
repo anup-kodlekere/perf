@@ -5,7 +5,7 @@ on:
   
 jobs:       
   power_shell:
-    runs-on: ubuntu-24.04-ppc64le
+    runs-on: ubuntu-24.04-ppc64le-debug
     steps:
     - uses: actions/checkout@v4
 
