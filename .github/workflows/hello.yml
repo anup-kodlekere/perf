@@ -1,4 +1,4 @@
-name: IO Tests
+name: Hello World
 
 # Only run on branches (e.g. not tags)
 on:
