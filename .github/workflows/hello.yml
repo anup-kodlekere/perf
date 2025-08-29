@@ -1,0 +1,23 @@
+name: IO Tests
+
+# Only run on branches (e.g. not tags)
+on:
+  workflow_dispatch:
+
+jobs:
+  hello:
+    name: Hello on Power
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, ubuntu-24.04-ppc64le, ubuntu-24.04-s390x]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Hello
+        run: |
+
+          echo "Hello from `arch`"
+          
