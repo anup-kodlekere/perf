@@ -10,7 +10,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, ubuntu-24.04-ppc64le, ubuntu-24.04-s390x]
+        os: [ubuntu-24.04-ppc64le, ubuntu-24.04-s390x]
 
     steps:
       - name: Checkout code
