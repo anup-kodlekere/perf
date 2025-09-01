@@ -1,4 +1,4 @@
-name: Hello World
+name: CPU
 
 # Only run on branches (e.g. not tags)
 on:
@@ -6,11 +6,11 @@ on:
 
 jobs:
   hello:
-    name: Hello on Power
+    name: Hello on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-24.04-ppc64le, ubuntu-24.04-s390x]
+        os: [ubuntu-latest, ubuntu-24.04-ppc64le, ubuntu-24.04-s390x]
 
     steps:
       - name: Checkout code
