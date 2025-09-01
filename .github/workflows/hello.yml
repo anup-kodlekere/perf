@@ -20,4 +20,9 @@ jobs:
         run: |
 
           echo "Hello from `arch`"
+          lscpu
+          echo "nproc"
+          nproc
+          nproc --all
+          grep . /sys/devices/system/cpu/{present,possible,online,offline}
           
