@@ -17,19 +17,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         
-      - name: Hello
-        run: |
+      # - name: Hello
+      #   run: |
 
-          echo "Hello from `arch`"
-          lscpu
-          echo "nproc"
-          nproc
-          nproc --all
-          grep . /sys/devices/system/cpu/{present,possible,online,offline}
+      #     echo "Hello from `arch`"
+      #     lscpu
+      #     echo "nproc"
+      #     nproc
+      #     nproc --all
+      #     grep . /sys/devices/system/cpu/{present,possible,online,offline}
 
 
       - name: ruby
         run: |
+          echo "================================================================"
           echo "before"
           echo "================================================================"
           id 
@@ -65,15 +66,24 @@ jobs:
           }
           EOF
 
+          echo "================================================================"
           echo "after"
           echo "================================================================"
           id
           id -u
           id -g
 
+          echo "================================================================"
           echo "c program"
           echo "================================================================"
           gcc groups.c -o gr
           ./gr "$(id -u)"
+
+
+          echo "================================================================"
+          echo "checking docker"
+          echo "================================================================"
+
+          docker info
 
           
