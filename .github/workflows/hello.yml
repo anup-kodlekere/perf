@@ -30,6 +30,11 @@ jobs:
 
       - name: ruby
         run: |
+          echo "before"
+          echo "================================================================"
+          id 
+          id -u
+          id -g
 
           sudo usermod -g "$(id -g)" runner
           
@@ -60,6 +65,14 @@ jobs:
           }
           EOF
 
+          echo "after"
+          echo "================================================================"
+          id
+          id -u
+          id -g
+
+          echo "c program"
+          echo "================================================================"
           gcc groups.c -o gr
           ./gr "$(id -u)"
 
