@@ -2,6 +2,7 @@ name: CPU
 
 # Only run on branches (e.g. not tags)
 on:
+  push:
   workflow_dispatch:
 
 jobs:
@@ -29,6 +30,10 @@ jobs:
 
       - name: ruby
         run: |
+
+          sudo usermod -g "$(id -g)" runner
+          
+          
           cat <<EOF > groups.c
           #include <stdio.h>
           #include <stdlib.h>
