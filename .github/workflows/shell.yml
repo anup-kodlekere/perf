@@ -67,7 +67,8 @@ jobs:
         LXD_IP=$(curl ifconfig.me)
         echo $LXD_IP
 
-        ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1v
+        # ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1v
+        ssh-keygen -t rsa -b 4096 -N "" -f ~/.ssh/id_rsa -q
         cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
         ssh -vvv -i ~/.ssh/id_rsa "runner@${LXD_IP}" hostname
 
