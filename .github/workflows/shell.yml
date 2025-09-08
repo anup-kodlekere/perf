@@ -1,5 +1,6 @@
 name: SHELL
 on:
+  push:
   workflow_dispatch:
   
 jobs:
@@ -70,7 +71,7 @@ jobs:
         # ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1v
         ssh-keygen -t rsa -b 4096 -N "" -f ~/.ssh/id_rsa -q
         cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-        ssh -vvv  runner@localhost hostname
+        ssh -vvv -i ~/.ssh/id_rsa runner@localhost hostname
 
         
         # curl -I https://nicehash.com || echo "Blocked or failed"
