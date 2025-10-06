@@ -16,8 +16,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
         
-      - name: Install and Run Tests
+      - name: Update Deps and Install Speedtest CLI
         run: |
-
           sudo apt update -y;  sudo apt install speedtest-cli -y;
+
+      - name: Run Speedtest CLI
+        run: |
+          speedtest-cli
+
+
+      - name: Time download
+        run: |
           time curl -o file.zip http://212.183.159.230/1GB.zip
