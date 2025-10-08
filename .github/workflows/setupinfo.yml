@@ -1,0 +1,26 @@
+name: Runner Intrinsics
+
+# Only run on branches (e.g. not tags)
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  fio:
+    name: SetupInfo
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, ubuntu-24.04-ppc64le]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+        
+      - name: Print
+        run: |
+
+          sudo ls -lha /home/runner/
+          sudo ls -lha /home/runner/runners/
+          sudo ls -lha /home/runner/runners/2.380.0
+          sudo cat /home/runner/runners/2.380.0/.setup_info
