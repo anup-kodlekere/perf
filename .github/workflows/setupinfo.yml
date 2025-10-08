@@ -20,7 +20,7 @@ jobs:
       - name: Print
         run: |
 
-          find . -type f -name ".setup_info"
+          sudo find / -type f -name ".setup_info"
 
           sudo ls -lha /home/runner/
           sudo ls -lha /home/runner/actions-runner/
