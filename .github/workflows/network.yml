@@ -18,13 +18,14 @@ jobs:
         
       - name: Update Deps and Install Speedtest CLI
         run: |
-          sudo apt update -y;  sudo apt install speedtest-cli -y;
+          sudo sestatus
+          sestatus
 
-      - name: Run Speedtest CLI
-        run: |
-          speedtest-cli
+      # - name: Run Speedtest CLI
+      #   run: |
+      #     speedtest-cli
 
 
-      - name: Time download
-        run: |
-          time curl -o file.zip http://212.183.159.230/1GB.zip
+      # - name: Time download
+      #   run: |
+      #     time curl -o file.zip http://212.183.159.230/1GB.zip
