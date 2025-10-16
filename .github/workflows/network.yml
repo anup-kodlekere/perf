@@ -18,8 +18,10 @@ jobs:
         
       - name: Update Deps and Install Speedtest CLI
         run: |
-          sudo sestatus
-          sestatus
+          dpkg -l | grep apparmor
+
+          systemctl status apparmor
+
 
       # - name: Run Speedtest CLI
       #   run: |
