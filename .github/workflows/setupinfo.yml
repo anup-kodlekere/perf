@@ -37,4 +37,6 @@ jobs:
           #cat /opt/runner/.setup_info
 
           echo "new"
-          ls -lha /opt/runner/_work/_temp
+          pwd
+          ls -lha /opt
+          ls -lha /opt/runner/_work/
