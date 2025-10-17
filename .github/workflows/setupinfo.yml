@@ -39,4 +39,5 @@ jobs:
           echo "new"
           pwd
           ls -lha /opt
-          ls -lha /opt/runner/_work/
+          ls $GITHUB_WORKSPACE
+          
