@@ -29,6 +29,7 @@ jobs:
           #sudo find / -type f -name ".setup_info"
           #cat /home/runner/actions-runner/cached/.setup_info
 
+          ls -lha /tmp/_actions-runner-working-dir/perf
           ls -lha /tmp/_actions-runner-working-dir/_temp
 
           ls -lha /tmp/_actions-runner-working-dir/_temp/_github_workflow
