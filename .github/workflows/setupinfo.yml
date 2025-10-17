@@ -43,5 +43,7 @@ jobs:
           echo "rt"
           ls "$RUNNER_TEMP"
 
+          ls /opt/runner/_diag
+
           
           
