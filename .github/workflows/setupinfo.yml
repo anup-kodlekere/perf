@@ -33,5 +33,8 @@ jobs:
           ls -lha /tmp/_actions-runner-working-dir/_temp
 
           ls -lha /tmp/_actions-runner-working-dir/_temp/_github_workflow
-          ls -lha /tmp/_actions-runner-working-dir/_temp/_runner_file_commands
+          # ls -lha /tmp/_actions-runner-working-dir/_temp/_runner_file_commands
           #cat /opt/runner/.setup_info
+
+          echo "new"
+          ls -lha /opt/runner/_work/_temp
