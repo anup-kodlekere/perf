@@ -10,11 +10,11 @@ jobs:
     steps:
       - name: Dump metadata
         run: jq . /imagegeneration/imagedata.json
-  windows:
+  ibm:
     strategy:
       matrix:
-        runner: [windows-2022, windows-11-arm]
+        runner: [ubuntu-24.04-ppc64le, ubuntu-24.04-s390x]
     runs-on: ${{ matrix.runner }}
     steps:
       - name: Dump metadata
-        run: jq . c:/imagedata.json
+        run: jq . /imagegeneration/imagedata.json
