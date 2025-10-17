@@ -17,4 +17,6 @@ jobs:
     runs-on: ${{ matrix.runner }}
     steps:
       - name: Dump metadata
-        run: jq . /imagegeneration/imagedata.json
+        run: |
+          ls -lha /var/tmp 
+          #jq . /imagegeneration/imagedata.json
