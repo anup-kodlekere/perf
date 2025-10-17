@@ -1,0 +1,20 @@
+on:
+  push:
+
+jobs:
+  ubuntu:
+    strategy:
+      matrix:
+        runner: [ubuntu-24.04, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - name: Dump metadata
+        run: jq . /imagegeneration/imagedata.json
+  windows:
+    strategy:
+      matrix:
+        runner: [windows-2022, windows-11-arm]
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - name: Dump metadata
+        run: jq . c:/imagedata.json
