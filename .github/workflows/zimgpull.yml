@@ -21,10 +21,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
         
-      - name: Pull
+      # - name: Pull
+      #   run: |
+
+      #     docker pull quay.io/centos/centos:stream9
+      #     docker pull registry.access.redhat.com/ubi9/ubi-minimal:latest
+
+      #     docker image ls
+
+      - name: ICR
         run: |
 
-          docker pull quay.io/centos/centos:stream9
-          docker pull registry.access.redhat.com/ubi9/ubi-minimal:latest
-
-          docker image ls
+          ping -c3 icr.io
+          curl -vvv icr.io
+          
