@@ -16,6 +16,8 @@ jobs:
             os: ubuntu-24.04-ppc64le
           - arch: s390x
             os: ubuntu-24.04-s390x
+          - arch: amd64
+            os: ubuntu-latest
 
     steps:
       - name: Checkout code
