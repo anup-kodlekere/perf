@@ -22,17 +22,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
-        
-      # - name: Pull
-      #   run: |
-
-      #     docker pull quay.io/centos/centos:stream9
-      #     docker pull registry.access.redhat.com/ubi9/ubi-minimal:latest
-
-      #     docker image ls
-
       - name: RustUp
-        uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2.0'
       - run: 
