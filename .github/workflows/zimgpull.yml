@@ -35,4 +35,5 @@ jobs:
         run: |
 
           rustup --version
+          file ruby 
           
