@@ -29,9 +29,8 @@ jobs:
 
       #     docker image ls
 
-      - name: ICR
+      - name: RustUp
         run: |
 
-          ping -c3 icr.io
-          curl -vvv https://icr.io
+          rustup --version
           
