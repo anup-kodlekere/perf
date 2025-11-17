@@ -14,7 +14,7 @@ jobs:
         nproc
         nproc --all
 
-        docker run -t --name count debian:latest "nproc; nproc --all"
+        docker run -t --name count debian:latest "nproc"
         # sudo apt update -y
         # sudo apt install -y systemd-container debootstrap
         # sudo debootstrap stable /var/lib/machines/test-image http://deb.debian.org/debian
