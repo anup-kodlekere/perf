@@ -14,7 +14,9 @@ jobs:
         nproc
         nproc --all
 
-        docker run -t --name count debian:latest "nproc"
+        # docker run -t --name count debian:latest "nproc"
+        docker run  -t ubuntu:latest bash -c 'cat /sys/fs/cgroup/cpuset/cpuset.cpus && nproc'
+        docker run -v /proc/cpuinfo:/proc/cpuinfo:rw -v /proc/meminfo:/proc/meminfo:rw -v /proc/stat:/proc/stat:rw --rm -t node:latest node -e "console.log(require('os').cpus().length)"
         # sudo apt update -y
         # sudo apt install -y systemd-container debootstrap
         # sudo debootstrap stable /var/lib/machines/test-image http://deb.debian.org/debian
