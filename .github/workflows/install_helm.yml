@@ -21,6 +21,15 @@ jobs:
 
           lxd init --preseed < preseed.yml
           lxc launch ubuntu:24.04 test
+
+          echo "mtu on job container: "
+          ip a
+
+          echo "mtu on build container"
+          lxc exec test -- ip a
+
+
+          
           lxc exec test -- ifconfig eth0 txqueuelen 10000
           lxc ls
           lxc exec test -- ping -c3 8.8.8.8
