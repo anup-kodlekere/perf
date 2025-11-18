@@ -23,14 +23,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
-      - name: Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3'
+      # - name: Ruby
+      #   uses: ruby/setup-ruby@v1
+      #   with:
+      #     ruby-version: '3.3'
       - name: check
         run: |
           # ls -l /sys/fs/selinux
           # getenforce
-          ruby --version
+          ls -lha /opt/hostedtoolcache/Ruby
           
           
