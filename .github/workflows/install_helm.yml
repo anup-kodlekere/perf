@@ -16,8 +16,6 @@ jobs:
 
       - name: test
         run: |
-          sudo apt update -y;
-          sudo snap install lxd --channel=5.21/stable
 
           lxd init --preseed < preseed.yml
           lxc launch ubuntu:24.04 test
@@ -30,6 +28,7 @@ jobs:
 
 
           
-          lxc exec test -- ifconfig eth0 txqueuelen 10000
+          lxc exec test -- echo 182757 > /proc/sys/net/core/netdev_max_backlog
+          lxc exec test -- echo "up ip link set eth0 txqueuelen 10000" >> /etc/network/interfaces
           lxc ls
           lxc exec test -- ping -c3 8.8.8.8
