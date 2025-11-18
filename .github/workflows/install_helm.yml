@@ -1,0 +1,24 @@
+name: Helm
+
+# Only run on branches (e.g. not tags)
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  heml:
+    name: helm-in-lxd 
+    runs-on: ubuntu-24.04-ppc64le
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: test
+        run: |
+          sudo apt update -y;
+          sudo snap install lxd --channel=5.21/stable
+
+          lxd init --auto 
+          lxc launch ubuntu:24.04 test
+          lxc exec test ping 8.8.8.8
