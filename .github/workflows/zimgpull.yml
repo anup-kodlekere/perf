@@ -22,9 +22,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
-      - name: RustUp
-        run: 
-          ls -l /sys/fs/selinux
-          getenforce
+      - name: Ruby
+        uses: ruby/setup-ruby@v1
+      - name: check
+        run: |
+          # ls -l /sys/fs/selinux
+          # getenforce
+          ruby --version
           
           
