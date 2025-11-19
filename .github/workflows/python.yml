@@ -1,0 +1,23 @@
+name: Python
+
+# Only run on branches (e.g. not tags)
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  heml:
+    name: setp
+    runs-on: ubuntu-24.04-ppc64le
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - uses: IBM/setup-python-pz@v6
+        with:
+          architecture: 'ppc64le'
+
+      - name: check
+        run: | 
+          python -v
