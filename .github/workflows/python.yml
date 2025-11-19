@@ -14,7 +14,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
 
-      - uses: IBM/setup-python-pz@v6
+      - uses: IBM/setup-python-pz@v5
         with:
           architecture: 'ppc64le'
 
