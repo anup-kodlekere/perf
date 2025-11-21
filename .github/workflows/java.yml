@@ -1,0 +1,25 @@
+name: Java
+
+# Only run on branches (e.g. not tags)
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  heml:
+    name: setp
+    runs-on: ubuntu-24.04-ppc64le
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - uses: actions/setup-java@v5
+        with:
+          architecture: 'ppc64le'
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: check
+        run: | 
+          java --version
