@@ -12,12 +12,12 @@ jobs:
     strategy:
       matrix:
         include:
-          - arch: ppc64le
-            os: ubuntu-24.04-ppc64le
-            home: /opt/runner
-          # - arch: amd64
-          #   os: ubuntu-latest
-          #   home: /home/runner/actions-runner
+          # - arch: ppc64le
+          #   os: ubuntu-24.04-ppc64le
+          #   home: /opt/runner
+          - arch: amd64
+            os: ubuntu-latest
+            home: /home/runner/actions-runner
 
     steps:
       - name: Checkout code
