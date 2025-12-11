@@ -30,8 +30,9 @@ jobs:
           ls -LaR ${{ env.home }}
           #cat /opt/runner-cache/actions-runner/cached/.setup_info
 
-          ls -lha /tmp/_actions-runner-working-dir/perf/perf
-          ls -lha /tmp/_actions-runner-working-dir/_temp
+          
+          # ls -lha /tmp/_actions-runner-working-dir/perf/perf
+          # ls -lha /tmp/_actions-runner-working-dir/_temp
 
           # ls -lha /tmp/_actions-runner-working-dir/_temp/_github_workflow
           # ls -lha /tmp/_actions-runner-working-dir/_temp/_runner_file_commands
