@@ -27,7 +27,7 @@ jobs:
         run: |
 
           #sudo find / -type f -name ".setup_info"
-          ls -LaR ${{ env.home }}
+          ls -LaR ${{ matrix.home }}
           #cat /opt/runner-cache/actions-runner/cached/.setup_info
 
           
