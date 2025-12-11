@@ -26,8 +26,8 @@ jobs:
       - name: Print
         run: |
 
-          sudo find / -type f -name ".setup_info"
-          #cat /home/runner/actions-runner/cached/.setup_info
+          #sudo find / -type f -name ".setup_info"
+          cat /home/runner/actions-runner/cached/.setup_info
 
           # ls -lha /tmp/_actions-runner-working-dir/perf/perf
           # ls -lha /tmp/_actions-runner-working-dir/_temp
