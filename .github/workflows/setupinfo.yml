@@ -14,10 +14,10 @@ jobs:
         include:
           - arch: ppc64le
             os: ubuntu-24.04-ppc64le
-            home: /opt/runner
-          # - arch: amd64
-          #   os: ubuntu-latest
-          #   home: /home/runner/actions-runner
+            home: /opt/
+          - arch: amd64
+            os: ubuntu-latest
+            home: /home/runner
 
     steps:
       - name: Checkout code
@@ -27,7 +27,7 @@ jobs:
         run: |
 
           #sudo find / -type f -name ".setup_info"
-          ls -LaR /opt
+          ls -LaR ${{ env.home }}
           #cat /opt/runner-cache/actions-runner/cached/.setup_info
 
           ls -lha /tmp/_actions-runner-working-dir/perf/perf
