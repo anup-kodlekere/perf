@@ -12,12 +12,12 @@ jobs:
     strategy:
       matrix:
         include:
-          # - arch: ppc64le
-          #   os: ubuntu-24.04-ppc64le
-          #   home: /opt/runner
-          - arch: amd64
-            os: ubuntu-latest
-            home: /home/runner/actions-runner
+          - arch: ppc64le
+            os: ubuntu-24.04-ppc64le
+            home: /opt/runner
+          # - arch: amd64
+          #   os: ubuntu-latest
+          #   home: /home/runner/actions-runner
 
     steps:
       - name: Checkout code
@@ -27,21 +27,19 @@ jobs:
         run: |
 
           #sudo find / -type f -name ".setup_info"
-          cat /home/runner/actions-runner/cached/.setup_info
+          ls -LR /opt
+          #cat /opt/runner-cache/actions-runner/cached/.setup_info
 
-          # ls -lha /tmp/_actions-runner-working-dir/perf/perf
-          # ls -lha /tmp/_actions-runner-working-dir/_temp
+          ls -lha /tmp/_actions-runner-working-dir/perf/perf
+          ls -lha /tmp/_actions-runner-working-dir/_temp
 
           # ls -lha /tmp/_actions-runner-working-dir/_temp/_github_workflow
-          # # ls -lha /tmp/_actions-runner-working-dir/_temp/_runner_file_commands
-          #cat /opt/runner/.setup_info
+          # ls -lha /tmp/_actions-runner-working-dir/_temp/_runner_file_commands
+          cat /opt/runner/.setup_info
 
           # echo "new"
           # pwd
           # ls -lha /opt
-
-          # echo "rt"
-          # ls "$RUNNER_TEMP"
 
           # ls /opt/runner/_diag
 
