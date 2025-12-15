@@ -7,7 +7,7 @@ on:
 jobs:
   heml:
     name: setp
-    runs-on: ubuntu-24.04-ppc64le
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
