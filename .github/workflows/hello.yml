@@ -2,7 +2,6 @@ name: CPU
 
 # Only run on branches (e.g. not tags)
 on:
-  push:
   workflow_dispatch:
 
 jobs:

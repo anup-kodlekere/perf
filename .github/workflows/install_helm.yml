@@ -3,7 +3,6 @@ name: Helm
 # Only run on branches (e.g. not tags)
 on:
   workflow_dispatch:
-  push:
 
 jobs:
   heml:
