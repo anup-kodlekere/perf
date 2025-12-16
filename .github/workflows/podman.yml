@@ -16,3 +16,7 @@ jobs:
       - name: check
         run: | 
           podman --version
+
+          sudo apt update -y;
+
+          sudo apt install podman -y;
