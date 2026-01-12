@@ -6,7 +6,7 @@ on:
 
 jobs:
   spec:
-    name: lscpu
+    name: opensearch
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -21,4 +21,6 @@ jobs:
 
     steps:
       - name: lscpu
-        run: lscpu
+        run: |
+          # git config --global http.postBuffer 524288000
+          git clone https://github.com/opensearch-project/opensearch.git
