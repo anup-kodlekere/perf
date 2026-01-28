@@ -1,11 +1,11 @@
-name: Python
+name: Multi-arch Python
 
 # Only run on branches (e.g. not tags)
 on:
   workflow_dispatch:
 
 jobs:
-  heml:
+  install_python:
     strategy:
       matrix:
         include:
@@ -15,16 +15,15 @@ jobs:
             runner: ubuntu-24.04-ppc64le
           - arch: amd64
             runner: ubuntu-24.04
-    name: setp
     runs-on: ${{ matrix.runner }}
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Setup Python on ${{ matrix.arch }}
         if: matrix.arch == 'amd64'
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: 3.13
 
@@ -35,7 +34,7 @@ jobs:
           architecture: ${{ matrix.arch }}
           python-version: 3.13
 
-      - name: check
+      - name: Verify Python
         run: | 
           python --version
           python -c "import platform; print(platform.machine())"
