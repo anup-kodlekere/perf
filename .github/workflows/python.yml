@@ -29,7 +29,7 @@ jobs:
 
       - name: Setup Python on ${{ matrix.arch }}
         if: matrix.arch != 'amd64'
-        uses: IBM/setup-python-pz@v6
+        uses: IBM/setup-python-pz@v6.0
         with:
           architecture: ${{ matrix.arch }}
           python-version: 3.13
