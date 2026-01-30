@@ -25,17 +25,18 @@ jobs:
         if: matrix.arch == 'amd64'
         uses: actions/setup-python@v6
         with:
-          python-version: 3.13
+          python-version: 3.11
 
       - name: Setup Python on ${{ matrix.arch }}
         if: matrix.arch != 'amd64'
         uses: IBM/setup-python-pz@v6.0
         with:
           architecture: ${{ matrix.arch }}
-          python-version: 3.13
+          python-version: 3.11
 
       - name: Verify Python
         run: | 
-          ls -l /opt/hostedtoolcache/Python
+          ls -l /opt/hostedtoolcache/Python/3.11.14/ppc64le/lib
+          sudo find / -name "libpython3.11.so.1.0"
           python --version
           python -c "import platform; print(platform.machine())"
