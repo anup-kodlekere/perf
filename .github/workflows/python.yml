@@ -21,6 +21,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
+      - name: Verify Python native
+        run: | 
+
+          which python
+          ldd "$(which python)"
+          readelf -d "$(which python)"
+          
+          python --version
+          python -c "import platform; print(platform.machine())"
+
       - name: Setup Python on ${{ matrix.arch }}
         if: matrix.arch == 'x64'
         uses: actions/setup-python@v6
@@ -34,13 +44,12 @@ jobs:
           architecture: ${{ matrix.arch }}
           python-version: 3.11
 
-      - name: Verify Python
+      - name: Verify Python action
         run: | 
-          ARCH="${{ matrix.arch }}"
-          which python
-          ls -l /opt/hostedtoolcache/Python/3.11.14/$ARCH/lib
 
+          which python
           ldd "$(which python)"
           readelf -d "$(which python)"
+          
           python --version
           python -c "import platform; print(platform.machine())"
