@@ -41,6 +41,6 @@ jobs:
           ls -l /opt/hostedtoolcache/Python/3.11.14/$ARCH/lib
 
           ldd "$(which python)"
-          readelf -d python
+          readelf -d "$(which python)"
           python --version
           python -c "import platform; print(platform.machine())"
