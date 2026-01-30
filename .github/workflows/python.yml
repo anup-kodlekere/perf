@@ -36,5 +36,6 @@ jobs:
 
       - name: Verify Python
         run: | 
+          ls -l /opt/hostedtoolcache/Python
           python --version
           python -c "import platform; print(platform.machine())"
