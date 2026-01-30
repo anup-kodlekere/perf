@@ -13,7 +13,7 @@ jobs:
             runner: ubuntu-24.04-s390x
           - arch: ppc64le
             runner: ubuntu-24.04-ppc64le
-          - arch: amd64
+          - arch: x64
             runner: ubuntu-24.04
     runs-on: ${{ matrix.runner }}
 
@@ -28,7 +28,7 @@ jobs:
           python-version: 3.11
 
       - name: Setup Python on ${{ matrix.arch }}
-        if: matrix.arch != 'amd64'
+        if: matrix.arch != 'x64'
         uses: IBM/setup-python-pz@v6.0
         with:
           architecture: ${{ matrix.arch }}
@@ -36,7 +36,8 @@ jobs:
 
       - name: Verify Python
         run: | 
+          ARCH="${{ matrix.arch }}"
           which python
-          ls -l /opt/hostedtoolcache/Python/3.11.14/`arch`/lib
+          ls -l /opt/hostedtoolcache/Python/3.11.14/$ARCH/lib
           python --version
           python -c "import platform; print(platform.machine())"
