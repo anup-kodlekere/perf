@@ -1,0 +1,31 @@
+name: Mock
+
+# Only run on branches (e.g. not tags)
+on:
+  workflow_dispatch:
+
+jobs:
+  install_python:
+    strategy:
+      matrix:
+        include:
+          - arch: s390x
+            runner: ubuntu-24.04-s390x
+          - arch: ppc64le
+            runner: ubuntu-24.04-ppc64le
+          - arch: x64
+            runner: ubuntu-24.04
+    runs-on: ${{ matrix.runner }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Verify Groups
+        run: | 
+          id
+          groups
+
+          git clone https://github.com/ManageIQ/manageiq-rpm_build
+          cd manageiq-rpm_build
+          bash bin/build_dependencies
