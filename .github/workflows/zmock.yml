@@ -27,5 +27,5 @@ jobs:
           groups
 
           git clone https://github.com/ManageIQ/manageiq-rpm_build
-          cd manageiq-rpm_build
-          bash bin/build_dependencies
+          cp assets/manageiq/build_deps manageiq-rpm_build/bin/build_dependencies
+          bash manageiq-rpm_build/bin/build_dependencies
