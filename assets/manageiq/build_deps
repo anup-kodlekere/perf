@@ -13,7 +13,7 @@ pushd packages
       docker run --rm --privileged --cap-add SYS_ADMIN -v $(pwd):/work:z localhost/mock:latest id
       docker run --privileged --cap-add SYS_ADMIN -v $(pwd):/work:z localhost/mock:latest whoami 
       docker run --privileged --cap-add SYS_ADMIN -v $(pwd):/work:z localhost/mock:latest groups
-      docker run --privileged --security-opt seccomp=unconfined -v $(pwd):/work:z localhost/mock:latest mock ./build
+      docker run --privileged --cap-add SYS_ADMIN --security-opt seccomp=unconfined -v $(pwd):/work:z localhost/mock:latest ./build
       docker run --rm --privileged --cap-add SYS_ADMIN -v $(pwd):/work:z localhost/mock:latest ./build
       ls -al result/
     popd
