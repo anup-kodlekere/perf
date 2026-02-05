@@ -11,7 +11,7 @@ pushd packages
     echo "Building $package"
     pushd $package
       docker run --rm --privileged --cap-add SYS_ADMIN -v $(pwd):/work:z localhost/mock:latest id
-      docker run --privileged --cap-add SYS_ADMIN -v $(pwd):/work:z localhost/mock:latest whoami 
+      docker run --privileged --cap-add SYS_ADMIN -v $(pwd):/work:z localhost/mock:latest dnf install -y file strace
       docker run --privileged --cap-add SYS_ADMIN -v $(pwd):/work:z localhost/mock:latest strace -f -e execve mock
       docker run --rm --privileged --cap-add SYS_ADMIN -v $(pwd):/work:z localhost/mock:latest ls -l /usr/bin/mock
       docker run --rm --privileged --cap-add SYS_ADMIN -v $(pwd):/work:z localhost/mock:latest ./build
