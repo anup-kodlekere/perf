@@ -2,21 +2,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  ubuntu:
-    strategy:
-      matrix:
-        runner: [ubuntu-24.04, ubuntu-24.04-arm]
-    runs-on: ${{ matrix.runner }}
-    steps:
-      - name: Dump metadata
-        run: jq . /imagegeneration/imagedata.json
   ibm:
     strategy:
       matrix:
-        runner: [ubuntu-24.04-ppc64le, ubuntu-24.04-s390x]
+        runner: [ubuntu-24.04-ppc64le-p10, ubuntu-24.04-ppc64le-2xlarge-p10]
     runs-on: ${{ matrix.runner }}
     steps:
       - name: Dump metadata
         run: |
-          ls -lha /var/tmp 
-          #jq . /imagegeneration/imagedata.json
+          nproc
+          free -h
