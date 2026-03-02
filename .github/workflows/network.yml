@@ -34,6 +34,8 @@ jobs:
 
       - name: nslookup
         run: |
-          ping -c3 iam.cloud.ibm.com
 
-          nslookup iam.cloud.ibm.com
+          for i in {1..200}; do
+            curl -s https://iam.cloud.ibm.com > /dev/null &
+          done
+          wait
