@@ -16,11 +16,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
         
-      - name: Update Deps and Install Speedtest CLI
-        run: |
-          dpkg -l | grep apparmor
+      # - name: Update Deps and Install Speedtest CLI
+      #   run: |
+      #     dpkg -l | grep apparmor
 
-          systemctl status apparmor
+      #     systemctl status apparmor
 
 
       # - name: Run Speedtest CLI
@@ -31,3 +31,9 @@ jobs:
       # - name: Time download
       #   run: |
       #     time curl -o file.zip http://212.183.159.230/1GB.zip
+
+      - name: nslookup
+        run: |
+          ping -c3 iam.cloud.ibm.com
+
+          nslookup iam.cloud.ibm.com
