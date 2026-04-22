@@ -35,6 +35,8 @@ jobs:
       - name: nslookup
         run: |
 
+          cat /etc/resolv.conf
+
           for i in {1..200}; do
             curl -s https://iam.cloud.ibm.com > /dev/null &
           done
