@@ -40,8 +40,10 @@ jobs:
 
           ip a
 
-          docker run --rm ubuntu:latest sh -c "ip a"
+          echo "---------------------------------------------------"
           docker run --rm ubuntu:latest sh -c "cat /etc/resolv.conf"
+          docker run --rm ubuntu:latest sh -c "apt-get update && apt-get install -y iproute2 && ip a"
+
           
           for i in {1..200}; do
             curl -s https://iam.cloud.ibm.com > /dev/null &
