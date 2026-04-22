@@ -36,7 +36,13 @@ jobs:
         run: |
 
           cat /etc/resolv.conf
+          resolvectl status
 
+          ip a
+
+          docker run --rm ubuntu:latest sh -c "ip a"
+          docker run --rm ubuntu:latest sh -c "cat /etc/resolv.conf"
+          
           for i in {1..200}; do
             curl -s https://iam.cloud.ibm.com > /dev/null &
           done
